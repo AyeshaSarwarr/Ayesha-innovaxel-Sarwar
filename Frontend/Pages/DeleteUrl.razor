@@ -1,0 +1,123 @@
+﻿@page "/DeleteShortCode"
+@inject HttpClient Http
+
+<h3 class="page-title">Delete Shortened URL</h3>
+
+<div class="container">
+    <div class="form-group">
+        <input @bind="shortCodeToDelete" placeholder="Enter Short Code to Delete" class="url-input" />
+    </div>
+    <div class="form-group">
+        <button @onclick="DeleteShortCode" class="delete-btn">Delete Short Code</button>
+    </div>
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="result">
+            <p>@message</p>
+        </div>
+    }
+</div>
+
+@code {
+    private string shortCodeToDelete;
+    private string message;
+    private bool isLoading = false;
+
+    private async Task DeleteShortCode()
+    {
+        if (string.IsNullOrWhiteSpace(shortCodeToDelete))
+        {
+            message = "Short code is required.";
+            return;
+        }
+
+        isLoading = true;
+        message = string.Empty;
+
+        // Send the DELETE request to remove the short URL
+        var response = await Http.DeleteAsync($"Url/delete/{shortCodeToDelete}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            message = "Short code deleted successfully!";
+        }
+        else
+        {
+            var error = await response.Content.ReadFromJsonAsync<ErrorResponse>();
+            message = error?.ErrorMessage ?? "Failed to delete short code";
+        }
+
+        isLoading = false;
+    }
+
+    public class ErrorResponse
+    {
+        public string ErrorMessage { get; set; }
+    }
+}
+
+<style>
+    .page-title {
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .url-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+
+    .delete-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        color: white;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+
+    .result {
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+        background-color: #f1c40f;
+        border: 1px solid #f39c12;
+        border-radius: 5px;
+        color: #2c3e50;
+    }
+
+    .loader {
+        text-align: center;
+        font-size: 18px;
+        color: #3498db;
+    }
+</style>
