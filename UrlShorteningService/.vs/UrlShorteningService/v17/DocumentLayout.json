@@ -1,0 +1,130 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9C0FCC-46A1-4E8A-9F41-60A6B8F03918}|UrlShorteningService\\UrlShorteningService.csproj|c:\\users\\ayesha\\source\\repos\\urlshorteningservice\\urlshorteningservice\\controllers\\urlcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9C0FCC-46A1-4E8A-9F41-60A6B8F03918}|UrlShorteningService\\UrlShorteningService.csproj|solutionrelative:urlshorteningservice\\controllers\\urlcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DA4F1A1-B360-43B0-924F-E28C3D40E793}|Frontend\\Frontend.csproj|c:\\users\\ayesha\\source\\repos\\urlshorteningservice\\frontend\\pages\\urlstatistics.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3DA4F1A1-B360-43B0-924F-E28C3D40E793}|Frontend\\Frontend.csproj|solutionrelative:frontend\\pages\\urlstatistics.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/UrlShorteningDb/True/SqlTable/dbo.UrlEntities.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9C0FCC-46A1-4E8A-9F41-60A6B8F03918}|UrlShorteningService\\UrlShorteningService.csproj|c:\\users\\ayesha\\source\\repos\\urlshorteningservice\\urlshorteningservice\\models\\urlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9C0FCC-46A1-4E8A-9F41-60A6B8F03918}|UrlShorteningService\\UrlShorteningService.csproj|solutionrelative:urlshorteningservice\\models\\urlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DA4F1A1-B360-43B0-924F-E28C3D40E793}|Frontend\\Frontend.csproj|c:\\users\\ayesha\\source\\repos\\urlshorteningservice\\frontend\\pages\\deleteurl.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3DA4F1A1-B360-43B0-924F-E28C3D40E793}|Frontend\\Frontend.csproj|solutionrelative:frontend\\pages\\deleteurl.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DA4F1A1-B360-43B0-924F-E28C3D40E793}|Frontend\\Frontend.csproj|c:\\users\\ayesha\\source\\repos\\urlshorteningservice\\frontend\\pages\\updateurl.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3DA4F1A1-B360-43B0-924F-E28C3D40E793}|Frontend\\Frontend.csproj|solutionrelative:frontend\\pages\\updateurl.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DA4F1A1-B360-43B0-924F-E28C3D40E793}|Frontend\\Frontend.csproj|c:\\users\\ayesha\\source\\repos\\urlshorteningservice\\frontend\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3DA4F1A1-B360-43B0-924F-E28C3D40E793}|Frontend\\Frontend.csproj|solutionrelative:frontend\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UrlStatistics.razor",
+              "DocumentMoniker": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\Frontend\\Pages\\UrlStatistics.razor",
+              "RelativeDocumentMoniker": "Frontend\\Pages\\UrlStatistics.razor",
+              "ToolTip": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\Frontend\\Pages\\UrlStatistics.razor",
+              "RelativeToolTip": "Frontend\\Pages\\UrlStatistics.razor",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwDMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-22T21:59:43.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DeleteUrl.razor",
+              "DocumentMoniker": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\Frontend\\Pages\\DeleteUrl.razor",
+              "RelativeDocumentMoniker": "Frontend\\Pages\\DeleteUrl.razor",
+              "ToolTip": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\Frontend\\Pages\\DeleteUrl.razor",
+              "RelativeToolTip": "Frontend\\Pages\\DeleteUrl.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-22T21:55:29.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UrlRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\UrlShorteningService\\Models\\UrlRepository.cs",
+              "RelativeDocumentMoniker": "UrlShorteningService\\Models\\UrlRepository.cs",
+              "ToolTip": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\UrlShorteningService\\Models\\UrlRepository.cs",
+              "RelativeToolTip": "UrlShorteningService\\Models\\UrlRepository.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAcwFEAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T21:19:00.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UpdateUrl.razor",
+              "DocumentMoniker": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\Frontend\\Pages\\UpdateUrl.razor",
+              "RelativeDocumentMoniker": "Frontend\\Pages\\UpdateUrl.razor",
+              "ToolTip": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\Frontend\\Pages\\UpdateUrl.razor",
+              "RelativeToolTip": "Frontend\\Pages\\UpdateUrl.razor",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAYwJQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-22T20:59:26.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UrlController.cs",
+              "DocumentMoniker": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\UrlShorteningService\\Controllers\\UrlController.cs",
+              "RelativeDocumentMoniker": "UrlShorteningService\\Controllers\\UrlController.cs",
+              "ToolTip": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\UrlShorteningService\\Controllers\\UrlController.cs",
+              "RelativeToolTip": "UrlShorteningService\\Controllers\\UrlController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAmwF8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T20:31:58.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dbo.UrlEntities.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/UrlShorteningDb/True/SqlTable/dbo.UrlEntities.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/UrlShorteningDb/True/SqlTable/dbo.UrlEntities.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-03-22T20:10:23.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\Frontend\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Frontend\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\Ayesha\\source\\repos\\UrlShorteningService\\Frontend\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Frontend\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-21T15:43:02.708Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
