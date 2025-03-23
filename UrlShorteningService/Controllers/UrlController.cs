@@ -50,7 +50,7 @@ namespace UrlShorteningService.Controllers
 
         // Update an existing short URL
         [HttpPut("update/{existingShortCode}")]
-        public async Task<IActionResult> UpdateShortUrl(string existingShortCode, [FromBody] UpdateUrlRequest request)
+        public async Task<IActionResult> UpdateShortUrl(string existingShortCode, [FromBody] dynamic request)
         {
             if (string.IsNullOrWhiteSpace(request?.NewShortCode))
                 return BadRequest(new { ErrorMessage = "New short code is required" });
@@ -67,4 +67,19 @@ namespace UrlShorteningService.Controllers
             return Ok(new { message = "Short code updated successfully" });
         }
 
+
+
+
+        // Delete an existing short URL
+        [HttpDelete("delete/{shortCode}")]
+        public async Task<IActionResult> DeleteShortUrl(string shortCode)
+        {
+            var deleted = await _urlService.DeleteShortUrlAsync(shortCode);
+            if (!deleted)
+                return NotFound(new { message = "Short URL not found" });
+
+            return NoContent();
+        }
+
+    }
 }
