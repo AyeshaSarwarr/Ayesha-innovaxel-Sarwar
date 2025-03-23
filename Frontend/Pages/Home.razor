@@ -1,0 +1,55 @@
+﻿@page "/"
+@inject NavigationManager manager
+
+<PageTitle>Home</PageTitle>
+
+<h2>URL Shortener API Test</h2>
+
+<div class="button-container">
+    <button @onclick="GoToRetrieve">Retrieve Original URL</button>
+    <button @onclick="GoToCreate">Create a Short URL</button>
+    <button @onclick="GoToUpdate">Update a URL</button>
+    <button @onclick="GoToDelete">Delete a URL</button>
+    <button @onclick="GoToStatistics">Check URL Statistics</button>
+</div>
+
+@code {
+    private void GoToRetrieve() => manager.NavigateTo("/RetrieveUrl");
+    private void GoToCreate() => manager.NavigateTo("/CreateUrl");
+    private void GoToUpdate() => manager.NavigateTo("/UpdateShortCode");
+    private void GoToDelete() => manager.NavigateTo("/DeleteShortCode");
+    private void GoToStatistics() => manager.NavigateTo("/UrlStatistics");
+}
+<style>
+    h2 {
+        text-align: center;
+        color: #333;
+        font-family: Arial, sans-serif;
+        padding: 50px;
+        
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 250px;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+</style>

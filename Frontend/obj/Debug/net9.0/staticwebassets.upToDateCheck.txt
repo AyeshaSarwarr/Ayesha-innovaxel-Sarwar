@@ -1,0 +1,5 @@
+C:\Users\Ayesha\source\repos\UrlShorteningService\Frontend\wwwroot\index.html
+C:\Users\Ayesha\source\repos\UrlShorteningService\Frontend\wwwroot\css\app.css
+wwwroot\css\app.css
+wwwroot\icon-192.png
+wwwroot\index.html
