@@ -1,0 +1,141 @@
+﻿@page "/UrlStatistics"
+@inject HttpClient Http
+
+<h3 class="page-title">URL Statistics</h3>
+
+<div class="container">
+    <div class="form-group">
+        <input @bind="shortCode" placeholder="Enter Short Code" class="url-input" />
+    </div>
+    <div class="form-group">
+        <button @onclick="GetUrlStats" class="stats-btn">Get URL Stats</button>
+    </div>
+
+    @if (isLoading)
+    {
+        <div class="loader">Loading...</div>
+    }
+    else if (!string.IsNullOrEmpty(statsMessage))
+    {
+        <div class="result">
+            <p>@statsMessage</p>
+        </div>
+    }
+</div>
+
+@code {
+    private string shortCode;
+    private string statsMessage;
+    private bool isLoading = false;
+
+    private async Task GetUrlStats()
+    {
+        if (string.IsNullOrWhiteSpace(shortCode))
+        {
+            statsMessage = "Short code is required.";
+            return;
+        }
+
+        isLoading = true;
+        statsMessage = string.Empty;
+
+        try
+        {
+            // Send GET request to fetch URL statistics
+            var response = await Http.GetFromJsonAsync<UrlStats>($"Url/stats/{shortCode}");
+
+            if (response != null)
+            {
+                if (response.AccessCount == -1)
+                {
+                    statsMessage = "Short code does not exist.";
+                }
+                else
+                {
+                    statsMessage = $"Access count: {response.AccessCount}";
+                }
+            }
+            else
+            {
+                statsMessage = "No statistics found for the given short code.";
+            }
+        }
+        catch (Exception)
+        {
+            statsMessage = "Failed to retrieve statistics.";
+        }
+
+        isLoading = false;
+    }
+
+    public class UrlStats
+    {
+        public string ShortCode { get; set; }
+        public int AccessCount { get; set; }
+    }
+}
+
+<style>
+    .page-title {
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .url-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+
+    .stats-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        color: white;
+        background-color: #3498db;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .stats-btn:hover {
+            background-color: #2980b9;
+        }
+
+    .result {
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+        background-color: #f39c12;
+        border: 1px solid #e67e22;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    .loader {
+        text-align: center;
+        font-size: 18px;
+        color: #3498db;
+    }
+</style>
