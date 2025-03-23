@@ -1,0 +1,87 @@
+[
+  {
+    "ContainingType": "UrlShorteningService.Controllers.UrlController",
+    "Method": "GetOriginalUrl",
+    "RelativePath": "api/Url/{shortCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shortCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrlShorteningService.Controllers.UrlController",
+    "Method": "CreateShortUrl",
+    "RelativePath": "api/Url/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "originalUrl",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrlShorteningService.Controllers.UrlController",
+    "Method": "DeleteShortUrl",
+    "RelativePath": "api/Url/delete/{shortCode}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shortCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrlShorteningService.Controllers.UrlController",
+    "Method": "GetUrlStats",
+    "RelativePath": "api/Url/stats/{shortCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shortCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrlShorteningService.Controllers.UrlController",
+    "Method": "UpdateShortUrl",
+    "RelativePath": "api/Url/update/{existingShortCode}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "existingShortCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "UpdateUrlRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "8I5H6aIUgEcdXU6OnbYNSw1xJhwx5UACMWPp2YnE8yQ=",
+  "Source": "UrlShorteningService",
+  "BasePath": "_content/UrlShorteningService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
