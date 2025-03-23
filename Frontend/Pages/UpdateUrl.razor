@@ -1,0 +1,148 @@
+﻿@page "/UpdateShortCode"
+@inject HttpClient Http
+
+<h3 class="page-title">Update Shortened URL</h3>
+
+@if (isLoading)
+{
+    <div class="loader">
+        <p>Updating...</p>
+    </div>
+}
+else
+{
+    <div class="container">
+        <div class="form-group">
+            <input @bind="existingShortCode" placeholder="Enter Existing Short Code" class="url-input" />
+        </div>
+        <div class="form-group">
+            <input @bind="newShortCode" placeholder="Enter New Short Code" class="url-input" />
+        </div>
+        <div class="form-group">
+            <button @onclick="UpdateShortCode" class="update-btn">Update Short Code</button>
+        </div>
+
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <div class="result">
+                <p>@message</p>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private string existingShortCode;
+    private string newShortCode;
+    private string message;
+    private bool isLoading = false;
+
+    private async Task UpdateShortCode()
+    {
+        if (string.IsNullOrWhiteSpace(existingShortCode) || string.IsNullOrWhiteSpace(newShortCode))
+        {
+            message = "Both existing and new short code are required.";
+            return;
+        }
+
+        // Validate short code length
+        if (newShortCode.Length != 6)
+        {
+            message = "Short code must contain exactly 6 characters";
+            return;
+        }
+
+        isLoading = true;
+        message = string.Empty;
+
+        // Create an object with the new short code to send in the request body
+        var requestBody = new { newShortCode };
+
+        // Send the PUT request to update the short URL
+        var response = await Http.PutAsJsonAsync($"Url/update/{existingShortCode}", requestBody);
+
+        if (response.IsSuccessStatusCode)
+        {
+            message = "Short code updated successfully!";
+        }
+        else
+        {
+            // Parse the response as dynamic, so you can access the errorMessage property
+            var error = await response.Content.ReadFromJsonAsync<ErrorResponse>();
+            // Access errorMessage safely
+            message = error?.ErrorMessage ?? "Failed to update short code";
+        }
+
+        isLoading = false;
+    }
+
+    public class ErrorResponse
+    {
+        public string ErrorMessage { get; set; }
+    }
+}
+
+<style>
+    .page-title {
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .url-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+
+    .update-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        color: white;
+        background-color: #3498db;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .update-btn:hover {
+            background-color: #2980b9;
+        }
+
+    .result {
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+        background-color: #eaf1f8;
+        border: 1px solid #b3d4fc;
+        border-radius: 5px;
+        color: #2c3e50;
+    }
+
+    .loader {
+        text-align: center;
+        font-size: 18px;
+        color: #3498db;
+    }
+</style>

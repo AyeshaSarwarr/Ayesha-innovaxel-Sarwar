@@ -50,7 +50,7 @@ namespace UrlShorteningService.Controllers
 
         // Update an existing short URL
         [HttpPut("update/{existingShortCode}")]
-        public async Task<IActionResult> UpdateShortUrl(string existingShortCode, [FromBody] dynamic request)
+        public async Task<IActionResult> UpdateShortUrl(string existingShortCode, [FromBody] UpdateUrlRequest request)
         {
             if (string.IsNullOrWhiteSpace(request?.NewShortCode))
                 return BadRequest(new { ErrorMessage = "New short code is required" });
@@ -89,4 +89,8 @@ namespace UrlShorteningService.Controllers
             return Ok(new { shortCode, accessCount = count });
         }
     }
+}
+public class UpdateUrlRequest
+{
+    public string NewShortCode { get; set; }
 }
