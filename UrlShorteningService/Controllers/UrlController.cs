@@ -37,4 +37,15 @@ namespace UrlShorteningService.Controllers
         }
 
 
- }
+        // Retrieve original URL
+        [HttpGet("{shortCode}")]
+        public async Task<IActionResult> GetOriginalUrl(string shortCode)
+        {
+            var url = await _urlService.GetOriginalUrlAsync(shortCode);
+            if (url == null)
+                return NotFound(new { message = "Short URL not found" });
+
+            return Ok(url);
+        }
+
+        
