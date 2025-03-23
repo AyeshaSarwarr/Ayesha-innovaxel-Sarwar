@@ -48,4 +48,23 @@ namespace UrlShorteningService.Controllers
             return Ok(url);
         }
 
-        
+        // Update an existing short URL
+        [HttpPut("update/{existingShortCode}")]
+        public async Task<IActionResult> UpdateShortUrl(string existingShortCode, [FromBody] UpdateUrlRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request?.NewShortCode))
+                return BadRequest(new { ErrorMessage = "New short code is required" });
+
+            // Ensure that the new short code meets the desired length requirement
+            if (request.NewShortCode.Length != 6)
+                return BadRequest(new { ErrorMessage = "Short code must contain exactly 6 characters" });
+
+            var updated = await _urlService.UpdateShortUrlAsync(existingShortCode, request.NewShortCode);
+
+            if (!updated)
+                return NotFound(new { ErrorMessage = "Existing short code not found" });
+
+            return Ok(new { message = "Short code updated successfully" });
+        }
+
+}
