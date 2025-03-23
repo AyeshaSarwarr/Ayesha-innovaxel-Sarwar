@@ -81,5 +81,12 @@ namespace UrlShorteningService.Controllers
             return NoContent();
         }
 
+        // Get URL statistics
+        [HttpGet("stats/{shortCode}")]
+        public async Task<IActionResult> GetUrlStats(string shortCode)
+        {
+            var count = await _urlService.GetUrlAccessCountAsync(shortCode);
+            return Ok(new { shortCode, accessCount = count });
+        }
     }
 }
